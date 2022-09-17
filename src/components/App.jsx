@@ -3,10 +3,13 @@ import Form from './Form/Form';
 import Contacts from './Contacts/Contacts';
 import Container from './Container/Container';
 import Section from './Section/Section';
+import { Global } from '@emotion/react';
+import { GlobalStyles } from './GlobalStyles';
 
 export default function App() {
   return (
     <Container>
+      <Global styles={GlobalStyles} />
       <Section title="Phonebook">
         <Form />
       </Section>
@@ -18,19 +21,3 @@ export default function App() {
     </Container>
   );
 }
-// export const App = () => {
-//   return (
-//     <div
-//       style={{
-//         height: '100vh',
-//         display: 'flex',
-//         justifyContent: 'center',
-//         alignItems: 'center',
-//         fontSize: 40,
-//         color: '#010101'
-//       }}
-//     >
-//       React homework template
-//     </div>
-//   );
-// };

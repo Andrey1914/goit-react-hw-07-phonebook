@@ -1,6 +1,10 @@
 import { useState } from 'react';
 import { useAddContactMutation, useGetContactsQuery } from 'redux/contactsAPI';
 import Loader from 'components/Loader/Loader';
+import { Input, Label } from './FormStyled';
+import { Box } from 'components/Box';
+import { Button } from 'components/Button/Button';
+import { IoMdPersonAdd } from 'react-icons/io';
 
 export default function Form() {
   const [addContact, { isLoading }] = useAddContactMutation();
@@ -12,6 +16,9 @@ export default function Form() {
     const { name, value } = event.currentTarget;
     if (name === 'name') {
       setContactName(value);
+    }
+    if (name === 'number') {
+      setPhone(value);
     }
   };
 
@@ -34,10 +41,15 @@ export default function Form() {
 
   return (
     <>
-      <form onSubmit={handleSubmit}>
-        <label>
+      <Box
+        as="form"
+        onSubmit={handleSubmit}
+        display="flex"
+        flexDirection="column"
+      >
+        <Label>
           Name
-          <input
+          <Input
             type="text"
             name="name"
             value={contactName}
@@ -46,10 +58,10 @@ export default function Form() {
             title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
             required
           />
-        </label>
-        <label>
+        </Label>
+        <Label>
           Number
-          <input
+          <Input
             type="tel"
             name="number"
             value={phone}
@@ -58,9 +70,19 @@ export default function Form() {
             title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
             required
           />
-        </label>
-        <button type="submit">Add contact</button>
-      </form>
+        </Label>
+        <Box
+          display="flex"
+          justifyContent="center"
+          pb={4}
+          borderBottom="normal"
+        >
+          <Button type="submit">
+            Add contact
+            <IoMdPersonAdd size={20} />
+          </Button>
+        </Box>
+      </Box>
       {isLoading && <Loader />}
     </>
   );
