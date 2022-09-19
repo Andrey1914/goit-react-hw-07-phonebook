@@ -1,9 +1,9 @@
-import { StyledButton } from './ButtonStyled';
+import { DelButton } from './ButtonStyled';
 
 export const Button = ({ type = 'button', onClick, children }) => {
   return (
-    <StyledButton onClick={onClick} type={type}>
+    <DelButton onClick={onClick} type={type}>
       {children}
-    </StyledButton>
+    </DelButton>
   );
 };

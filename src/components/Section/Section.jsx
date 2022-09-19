@@ -4,7 +4,7 @@ import { Title } from './SectionStyled';
 
 export default function Section({ children, title }) {
   return (
-    <Box as="section" p={4}>
+    <Box as="section" p={3} m={3}>
       <Title>{title}</Title>
       {children}
     </Box>

@@ -3,7 +3,7 @@ import { useAddContactMutation, useGetContactsQuery } from 'redux/contactsAPI';
 import Loader from 'components/Loader/Loader';
 import { Input, Label } from './FormStyled';
 import { Box } from 'components/Box';
-import { Button } from 'components/Button/Button';
+import { StyledButton } from 'components/Button/ButtonStyled';
 import { IoMdPersonAdd } from 'react-icons/io';
 
 export default function Form() {
@@ -77,10 +77,10 @@ export default function Form() {
           pb={4}
           borderBottom="normal"
         >
-          <Button type="submit">
+          <StyledButton type="submit">
             Add contact
             <IoMdPersonAdd size={20} />
-          </Button>
+          </StyledButton>
         </Box>
       </Box>
       {isLoading && <Loader />}

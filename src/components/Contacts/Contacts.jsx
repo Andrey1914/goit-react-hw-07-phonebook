@@ -28,7 +28,7 @@ export default function Contacts() {
     <>
       {isLoading && <Loader />}
       {loading && <Loader />}
-      <Box as="ul" display="flex" flexDirection="column">
+      <Box as="ul" display="flex" flexDirection="column" gridGap={4}>
         {getVisibleContacts()?.map(({ id, name, phone }) => {
           return (
             <Box
@@ -37,13 +37,16 @@ export default function Contacts() {
               display="flex"
               justifyContent="space-between"
               alignItems="center"
-              mb={4}
+              p={3}
+              borderRadius={4}
+              gridGap={3}
+              boxShadow="0px 3px 5px 1px rgba(45, 90, 124, 0.2)"
             >
               <p>
                 {name}&#32;:&#32;{phone}
               </p>
               <Button onClick={() => deleteContact(id)}>
-                Delete <MdDelete size={20} />
+                <MdDelete size={20} />
               </Button>
             </Box>
           );

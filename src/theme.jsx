@@ -9,7 +9,7 @@ export const theme = {
     primary: '#07c',
     secondary: '#05a',
     accent: '#609',
-    muted: '#ccc',
+    muted: '',
     lightMuted: '#ededed',
   },
   space: [0, 2, 4, 8, 16, 20, 32, 64, 128, 152, 256, 320, 512],
@@ -32,14 +32,7 @@ export const theme = {
     none: '0',
     small: '2px',
     normal: '4px',
-    big: '8px',
+    big: '16px',
     round: '50%',
   },
-  //   breakpoints: [ '40em', '52em', '64em' ],
-
-  // mediaQueries: {
-  //   // small: `@media screen and (min-width: ${breakpoints[0]})`,
-  //   medium: `@media screen and (min-width: 768px)`,
-  //   large: `@media screen and (min-width: 1200px)`,
-  // },
 };
